@@ -1,0 +1,18 @@
+body{
+    display:flex;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+.sides{
+    flex:1;
+}
+.mainBox{
+    flex:2;
+    display:flex;
+    justify-content: center;
+}
+
+.mainSquare{
+    flex: 0.5 0 16cm;
+}
