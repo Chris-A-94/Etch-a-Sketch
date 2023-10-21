@@ -29,11 +29,13 @@ body{
 }
 
 #mainSquare{
-    flex: 0 0 12cm;
-    min-height:12cm;
+    flex: 0 0 12cm; 
+    min-height:12cm; 
     background-color: white;
     display:flex;
     flex-direction: column;
+      
+    
 }
 
 #gridSizer{
