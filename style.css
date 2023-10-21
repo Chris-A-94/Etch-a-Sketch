@@ -1,12 +1,20 @@
+*{
+    display:flex;
+}
+
+html{
+    height:100%;
+}
+
 body{
     display:flex;
     flex-direction: column;
+    flex:1;
     height: 100%;
     background-color: black;
 }
 #title{
-    color:white;
-    
+    color:white;    
 }
 
 .sides{
@@ -26,4 +34,16 @@ body{
     background-color: white;
     display:flex;
     flex-direction: column;
+}
+
+#gridSizer{
+    align-self: center;
+    font-weight: bold;
+    flex: 0 1 4cm;
+    display: flex;
+    height: 1cm;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(253, 247, 71);
+    border-radius: 10px;
 }

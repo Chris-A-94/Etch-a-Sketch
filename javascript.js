@@ -10,6 +10,7 @@ function createSquare(row)
     square.style.border = 'solid';
     square.style.flex = '1';
     square.style.borderWidth = 'thin';
+    square.style.backgroundColor = 'white';
     square.addEventListener('mouseenter',()=>{
         changeColor(square);
     });
@@ -25,12 +26,37 @@ function createRow()
     return row;
 }
 
-const mainSquare = document.getElementById('mainSquare');
-
-for (let i = 0; i < 16; i++)
+function createGrid(size)
 {
-    let row = createRow();
-    for(let j = 0; j < 16; j++)
-        createSquare(row);
-    mainSquare.appendChild(row);
+    const mainSquare = document.getElementById('mainSquare');
+
+    for (let i = 0; i < size; i++)
+    {
+      let row = createRow();
+      for(let j = 0; j < size; j++)
+            createSquare(row);
+      mainSquare.appendChild(row);
+    }
 }
+
+function deleteGrid()
+{
+    const mainSquare = document.getElementById('mainSquare');
+    
+
+
+    while(mainSquare.firstChild)
+        mainSquare.removeChild(mainSquare.firstChild);
+}
+
+const boton = document.getElementById('gridSizer');
+boton.addEventListener('click',()=>{
+    let gridSize = +prompt("Ingrese numero de cuadrados por lado. Default: 16. Maximo: 99.");
+    deleteGrid();
+    if(gridSize !== null && gridSize < 100)
+        createGrid(gridSize);
+    else
+        createGrid(16);
+})
+
+createGrid(16);
